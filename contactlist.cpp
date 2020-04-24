@@ -1,16 +1,11 @@
 #include "contactlist.h"
-#include <iostream>
-
-contactlist::contactlist()
-{
-    //ctor
-}
 
 contactlist::~contactlist()
 {
     ContactNode *nodePtr;
     ContactNode *nextNode;
-    ContactNode = head;
+
+    nodePtr = head;
 
     while (nodePtr != nullptr)
     {
@@ -20,15 +15,28 @@ contactlist::~contactlist()
     }
 }
 
-void insertNode(string first_name, string last_name, string phoneNumber)
+void contactlist::displayList() const{
+    ContactNode *nodePtr;
+
+    nodePtr = head;
+
+    while(nodePtr)
+    {
+        cout << nodePtr->firstName << " " << nodePtr->lastName << " " << nodePtr->phoneNumber << endl;
+        nodePtr = nodePtr->next;
+    }
+}
+
+void contactlist::insertNode(string first_name, string last_name, string phoneNumber)
 {
     ContactNode *newNode;
     ContactNode *nodePtr;
     ContactNode *previousNode = nullptr;
 
     newNode = new ContactNode;
-
-    /*** assign new contact info to the new node here ***/
+    newNode->firstName = first_name;
+    newNode->lastName = last_name;
+    newNode->phoneNumber = phoneNumber;
 
     if (!head)  // head points to nullptr meaning list is empty
     {
@@ -39,7 +47,7 @@ void insertNode(string first_name, string last_name, string phoneNumber)
     {
         nodePtr = head;
         previousNode = nullptr;
-        while (nodePtr != nullptr /*** && condition you need to keep the list sorted ***/)
+        while (nodePtr != nullptr && nodePtr->lastName < last_name)
         {
             previousNode = nodePtr;
             nodePtr = nodePtr->next;
@@ -57,15 +65,15 @@ void insertNode(string first_name, string last_name, string phoneNumber)
     }
 }
 
-void deleteNode (string name)
+void contactlist::deleteNode (string first_name, string last_name)
 {
    ContactNode *nodePtr;
    ContactNode *previousNode;
 
-   if (!head) // if the list is empty, do nothing
-      return;
+   if (!head)
+    return;
 
-   /*** write code to test if the first node is the one ***/
+   if (first_name == head->firstName && last_name == head->lastName)
    {
       nodePtr = head->next;
       delete head;
@@ -75,15 +83,15 @@ void deleteNode (string name)
    {
       nodePtr = head;
       // skip all nodes whose values don't match
-      while (nodePtr != nullptr /*** && test for node values) ***/
+      while (nodePtr != nullptr && first_name != nodePtr->firstName && last_name != nodePtr->lastName)
       {
          previousNode = nodePtr;
          nodePtr = nodePtr->next;
       }
-      if (nodePtr) // if nodePtr is not at the end
+      if (nodePtr && first_name == nodePtr->firstName && last_name == nodePtr->lastName) // if nodePtr is not at the end
       {
          previousNode->next = nodePtr->next; // link the previous node to the node after
-         delete NodePtr;  // delete the node
+         delete nodePtr;  // delete the node
       }
    }
 }
