@@ -1,3 +1,14 @@
+/*
+  CIS 22C
+    Lab1: This lab uses a linked list to create a phonebook
+    where the user can insert, delete, and display contacts.
+
+  Author: Michael Wallerius
+
+  Date: 4/23/2020
+
+*/
+
 #include <iostream>
 #include "contactlist.h"
 

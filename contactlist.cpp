@@ -15,6 +15,9 @@ contactlist::~contactlist()
     }
 }
 
+/*
+This function traverses the linked list and displays all names and phone numbers. There is no return value.
+*/
 void contactlist::displayList() const{
     ContactNode *nodePtr;
 
@@ -27,6 +30,9 @@ void contactlist::displayList() const{
     }
 }
 
+/*
+This function allows the user to insert new names and phone numbers into the list without it losing its order. There is no return value.
+*/
 void contactlist::insertNode(string first_name, string last_name, string phoneNumber)
 {
     ContactNode *newNode;
@@ -65,6 +71,9 @@ void contactlist::insertNode(string first_name, string last_name, string phoneNu
     }
 }
 
+/*
+This function allows the user to delete a specific name and number from the list without it losing its order. There is no return value.
+*/
 void contactlist::deleteNode (string first_name, string last_name)
 {
    ContactNode *nodePtr;
