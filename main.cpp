@@ -63,3 +63,63 @@ int main()
         }
     }
 }
+
+/* OUTPUT
+Welcome to the Phone Book
+-------------------------
+Options (type number to make selection)
+1. Add to the phone book
+2. Delete from the phone book
+3. Display the phone book
+4. Exit the program
+
+What do you want to do: 1
+
+Enter his/her first name: Michael
+Enter his/her last name: Wallerius
+Enter their 10-digit phone number w/o spaces: 6692568149
+
+Michael Wallerius 6692568149 has been added to the phonebook.
+
+What do you want to do: 1
+
+Enter his/her first name: Caroline
+Enter his/her last name: Johnson
+Enter their 10-digit phone number w/o spaces: 4082451083
+
+Caroline Johnson 4082451083 has been added to the phonebook.
+
+What do you want to do: 1
+
+Enter his/her first name: Harold
+Enter his/her last name: Palmer
+Enter their 10-digit phone number w/o spaces: 6502487153
+
+Harold Palmer 6502487153 has been added to the phonebook.
+
+What do you want to do: 3
+
+Phonebook
+---------
+Caroline Johnson 4082451083
+Harold Palmer 6502487153
+Michael Wallerius 6692568149
+
+What do you want to do: 2
+
+Enter his/her first name: Caroline
+Enter his/her last name: Johnson
+Caroline Johnson has been removed from the phonebook.
+What do you want to do: 3
+
+Phonebook
+---------
+Harold Palmer 6502487153
+Michael Wallerius 6692568149
+
+What do you want to do: 4
+
+
+Process returned 0 (0x0)   execution time : 73.915 s
+Press any key to continue.
+*/
